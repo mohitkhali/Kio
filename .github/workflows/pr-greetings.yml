@@ -1,0 +1,14 @@
+name: Greetings
+
+on: [pull_request_target]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        pr-message: "👀 Got your PR! I’ll dive into it shortly and share my thoughts.Appreciate your contribution! 💪✨"
